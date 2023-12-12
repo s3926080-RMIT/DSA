@@ -4,15 +4,19 @@ public class SecretKeyGuesser {
     SecretKey key = new SecretKey();
     String str = "MMMMMMMMMMMM";
     int matchedChars = key.guess(str);
+    System.out.println("Guessing... " + str);
     int check = matchedChars;
     int currentCharIndex = 0;
+    int counter = 0;
     while (matchedChars != 12) {
+      counter++;
       if (check - matchedChars == 0) { 
         str = nextOrder(str, currentCharIndex);
       }
 
       else if (check - matchedChars < 0) {
         currentCharIndex++;
+        str = nextOrder(str, currentCharIndex);
       }
 
       else if (check - matchedChars > 0) {
@@ -23,9 +27,8 @@ public class SecretKeyGuesser {
       }
 
       check = matchedChars;
-      System.out.println("Guessing... " + str);
+      System.out.println("Guessing... " + str + counter);
       matchedChars = key.guess(str);
-
     }
     System.out.println("I found the secret key. It is " + str);
   }
