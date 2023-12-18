@@ -54,7 +54,7 @@ public class SecretKeyGuesser {
       else if (check - matchedChars > 0) {
         str = prevOrder(str, currentCharIndex);
         currentCharIndex++;
-        matchedChars = key.guess(str);
+        matchedChars++;
         continue;
       }
 
