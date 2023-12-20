@@ -117,4 +117,104 @@ public class SecretKeyGuesser {
       }
       return String.valueOf(characters);
   }
+
+  // while (matchedChars != 12) {
+      
+//     // Case 1: If GuessedKey and CorrectKey have 0 matches, shift every character in GuessedKey forward once.
+//     while (matchedChars == 0) {
+//       int currentCharIndexShiftAll = 0;
+//       for (int i = 0; i < str.length(); i++) {
+//           str = nextOrder(str, currentCharIndexShiftAll);
+//           currentCharIndexShiftAll++;
+//           if (currentCharIndexShiftAll == str.length()) {
+//               currentCharIndexShiftAll = 0;
+//           }
+//       }
+      
+//       matchedChars = key.guess(str);
+//       System.out.println("Guessing... " + str + " " + matchedChars);
+//     }
+    
+//     if (matchedChars == 12) {
+//       break;
+//     }
+    
+//     if (check - matchedChars == 0) { 
+//       str = nextOrder(str, currentCharIndex);
+//     }
+
+//     else if (check - matchedChars < 0) {
+//       currentCharIndex++;
+//       if (currentCharIndex == str.length()) {
+//           currentCharIndex = 0;
+//       }
+//       str = nextOrder(str, currentCharIndex);
+      
+//     }
+
+//     else if (check - matchedChars > 0) {
+//       str = prevOrder(str, currentCharIndex);
+//       currentCharIndex++;
+//       if (currentCharIndex == str.length()) {
+//           currentCharIndex = 0;
+//       }
+//       matchedChars++;
+//       continue;
+//     }
+
+//     check = matchedChars;
+//     System.out.println("Guessing... " + str + " " + matchedChars);
+//     matchedChars = key.guess(str);
+//   }
+//   System.out.println("I found the secret key. It is " + str);
+// }
+//   static int order(char c) {
+//     if (c == 'M') {
+//       return 0;
+//     } else if (c == 'O') {
+//       return 1;
+//     } else if (c == 'C') {
+//       return 2;
+//     } else if (c == 'H') {
+//       return 3;
+//     } 
+//     return 4;
+//   }
+
+//   static char charOf(int order) {
+//     if (order == 0) {
+//       return 'M';
+//     } else if (order == 1) {
+//       return 'O';
+//     } else if (order == 2) {
+//       return 'C';
+//     } else if (order == 3) {
+//       return 'H';
+//     } 
+//     return 'A';
+//   }
+
+//   public String nextOrder(String current, int currentCharIndex) {
+//     char[] characters = current.toCharArray();
+//     if (currentCharIndex >= characters.length) {
+//         currentCharIndex = 0; // Reset index to 0 if it's at the end of the string
+//     }
+//     if (order(characters[currentCharIndex]) == 4) {
+//         characters[currentCharIndex] = 'M';
+//     } else {
+//         characters[currentCharIndex] = charOf(order(characters[currentCharIndex]) + 1);
+//     }
+//     return String.valueOf(characters);
+// }
+
+//   public String prevOrder(String current, int currentCharIndex) {
+//       char[] characters = current.toCharArray();
+//       if (order(characters[currentCharIndex]) == 0) {
+//           characters[currentCharIndex] = 'A';
+//       }
+//       else {
+//           characters[currentCharIndex] = charOf(order(characters[currentCharIndex]) - 1);
+//       }
+//       return String.valueOf(characters);
+//   }
 }
