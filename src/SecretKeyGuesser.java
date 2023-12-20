@@ -28,6 +28,7 @@ public class SecretKeyGuesser {
             
         }
         matchedChars = key.guess(str);
+        check = matchedChars;
         System.out.println("Guessing... " + str);
       }
 
